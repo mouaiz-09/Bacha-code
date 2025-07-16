@@ -4,9 +4,11 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Home from './project/Home';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+import { SpeedInsights } from "@vercel/speed-insights/react"
 root.render(
   <React.StrictMode>
     <Home />
+    <SpeedInsights/>
   </React.StrictMode>
 );
 
