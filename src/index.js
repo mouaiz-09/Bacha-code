@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Home from './project/Home';
-const root = ReactDOM.createRoot(document.getElementById('root'));
 import { SpeedInsights } from "@vercel/speed-insights/react"
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Home />
