@@ -1,0 +1,6 @@
+<!-- bacha-icon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#0B1120"/>
+  <path d="M24 16h16c4.418 0 8 3.582 8 8s-3.582 8-8 8h-16V16zm0 16h16c4.418 0 8 3.582 8 8s-3.582 8-8 8h-16V32z"
+        fill="#22E584"/>
+</svg>

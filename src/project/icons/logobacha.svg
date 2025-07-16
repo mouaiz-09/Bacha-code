@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="64" viewBox="0 0 360 64">
+  <!-- الحرف B المتحرك -->
+  <path
+    d="M20 16h24c4 0 8 4 8 8s-4 8-8 8H20V16zm0 16h24c4 0 8 4 8 8s-4 8-8 8H20V32z"
+    fill="none"
+    stroke="#22E584"
+    stroke-width="3"
+    stroke-dasharray="140"
+    stroke-dashoffset="140"
+  >
+    <animate attributeName="stroke-dashoffset" from="140" to="0" dur="1.5s" repeatCount="indefinite" />
+  </path>
+
+  <!-- تدرج لوني للنص -->
+  <defs>
+    <linearGradient id="gradientText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22E584">
+        <animate attributeName="stop-color" values="#22E584;#3DBEFF;#22E584" dur="3s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#3DBEFF">
+        <animate attributeName="stop-color" values="#3DBEFF;#22E584;#3DBEFF" dur="3s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+  </defs>
+
+  <!-- النص مع تأثير الكتابة -->
+  <text x="70" y="42" font-size="28" font-family="Poppins, sans-serif"
+        stroke="url(#gradientText)" stroke-width="1" fill-opacity="0"
+        stroke-dasharray="200" stroke-dashoffset="200">
+    <animate attributeName="stroke-dashoffset" from="200" to="0" dur="2.5s" repeatCount="indefinite" />
+    Bacha Code
+  </text>
+</svg>
