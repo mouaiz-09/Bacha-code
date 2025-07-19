@@ -1,8 +1,23 @@
 import { useState } from "react"
-import LoadingCircleSpinner from "./LoadingCircleSpinner";
+import imglogo from "./icons/Coding.gif"
+import Pope from "./Pope";
 
 export default function Form(params) {
-    const [vewstate, setvew] = useState(true);
+    const [vewstate, setvew] = useState({
+        VewKey: false,
+        Message: "جاري ارسال طلبكم",
+        color: "rgb(255, 230, 0)",
+        boxShadow: "rgb(255, 230, 0)",
+        background: "#0b1120"
+    });
+
+    const realform = {
+        VewKey: false,
+        Message: "جاري ارسال طلبكم",
+        color: "rgb(255, 230, 0)",
+        boxShadow: "",
+           background: "#0b1120"
+    }
 
     //state for datat form
     const [FormDtat, SetFormDatat] = useState({
@@ -17,6 +32,7 @@ export default function Form(params) {
     const PushDtat = async () => {
         if (Name.length > 3 && Message.length > 5 && Phone.length === 10) {
             //ftech 
+            setvew({ ...vewstate, VewKey: true })
 
             await fetch("https://script.google.com/macros/s/AKfycbwdSbpzdCx9qJNWc2BtYPB8wprcXHNGWVWYnWeD-PLRKHF9He09vOpgRqx_GpxWVOM2/exec", {
                 method: 'POST',
@@ -24,26 +40,26 @@ export default function Form(params) {
             })
                 .then(res => res.text())
                 .then(response => {
-                    alert('✅ تم إرسال الرسالة بنجاح!');
                     SetFormDatat({ Name: '', Phone: '', Email: '', Message: '' });
-                    setvew(false)
+                    setvew({ ...vewstate, Message: "تم الإرسال بنجاح", color: 'rgb(12, 201, 69)', VewKey: true, boxShadow: "rgb(12, 201, 69)" })
+
                 })
                 .catch(err => {
-                    console.error('❌ خطأ في الإرسال:', err);
-                    alert('⚠️ صار خطأ أثناء الإرسال');
-                    setvew(false)
+                    setvew({ ...vewstate, Message: "حدث خطا   لم يتم الارسال ", color: "red", VewKey: true, boxShadow: "red" })
                 });
-
-
-
 
         }
         else {
-            alert("erro")
+            setvew({ ...vewstate, Message: 'معلومات التسجيل خاطئة', VewKey: true, boxShadow: "red" })
         }
 
     }
 
+
+    function HendelPopePage(value) {
+
+        setvew({...realform})
+    }
 
 
     return (<>
@@ -51,10 +67,6 @@ export default function Form(params) {
             <h1 style={{ textAlign: "center" }}>أحصل على عرض </h1>
             <form onSubmit={(ev) => {
                 ev.preventDefault();
-                setvew(true)
-
-
-
             }}>
 
                 <div className="FormInputs" id="Contects">
@@ -87,7 +99,11 @@ export default function Form(params) {
                 </div>
             </form>
         </div>
-        <LoadingCircleSpinner statae={vewstate}  ></LoadingCircleSpinner>
+        <Pope statue={vewstate.VewKey} fuction={HendelPopePage} src={imglogo} alt={"img"} text={vewstate.Message}
+         key={1} color={vewstate.color}   box={vewstate.boxShadow} >
+
+
+        </Pope>
 
 
     </>)

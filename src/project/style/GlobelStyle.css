@@ -5,10 +5,11 @@
 }
 
 
-html{
+html {
     scroll-behavior: smooth;
     transition: 0.5s ease-in-out
 }
+
 /*cdn*/
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
@@ -96,12 +97,13 @@ ul {
     width: 100%;
 }
 
-.links button{
+.links button {
     background-color: transparent;
-    border: none    ;
+    border: none;
     color: whitesmoke !important;
     font-size: 15px;
 }
+
 .links .links-ul {
     width: 70%;
     display: flex;
@@ -467,10 +469,10 @@ form label::after {
     background-color: transparent;
 
     background-color: var(--color-background--);
- padding: 10px;
+    padding: 10px;
     box-shadow: 0px 0px 20px var(--color-blue-sky);
     border-radius: 10px;
-    transition: 0.6s ease-in-out    ;
+    transition: 0.6s ease-in-out;
 }
 
 
@@ -482,20 +484,22 @@ form label::after {
     direction: rtl;
     width: 100%;
     text-align: center;
-gap: 5px;
+    gap: 5px;
 }
 
 .MeuConten li {
     width: 100%;
     padding: 0px 5px;
 }
-.MeuConten a{
+
+.MeuConten a {
     border-radius: 10px;
     background-color: var(--color-green-dark);
-font-weight: 500;
-transition: 0.5s ease-in-out;
+    font-weight: 500;
+    transition: 0.5s ease-in-out;
 }
-.MeuConten a:hover{
+
+.MeuConten a:hover {
     transform: scale(1.2);
     background-color: var(--color-green-notion);
 }
@@ -721,4 +725,46 @@ transition: 0.5s ease-in-out;
         align-items: center;
         flex-direction: column;
     }
+}
+
+/*pope start*/
+.Ppoe {
+    width: 100%;
+    height: 100vh;
+    background-color: #02273d54;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    right: 0pc
+}
+
+.PopeContent {
+   background-color: var(--color-background--);
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+    width: 50%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px  yellow;
+
+}
+
+
+
+.Ppoeimg {
+
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+.PopeContent .Ppoeimg img {
+    width: 100% !important;
 }
